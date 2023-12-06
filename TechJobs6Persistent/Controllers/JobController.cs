@@ -40,9 +40,25 @@ namespace TechJobs6Persistent.Controllers
         }
 
         [HttpPost]
-        public IActionResult ProcessAddJobForm()
+        public IActionResult Add(AddJobViewModel addJobViewModel)
         {
-            return View();
+            // take an instance of AJviewmodel + make sure validation conditions are met before before creating new job
+            //model valid go to "/jobs"
+            if (ModelState.IsValid)
+            { 
+                Employer theEmployer = context.Employers.Find(addJobViewModel.EmployerId);
+
+                Job newJob = new Job
+                {
+                    Name = addJobViewModel.Name,
+                    Employer = theEmployer
+                };
+                context.Jobs.Add(newJob);
+                context.SaveChanges();
+                return Redirect("/Job");
+            }
+        
+            return View(addJobViewModel);
         }
 
         public IActionResult Delete()
