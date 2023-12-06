@@ -31,7 +31,12 @@ namespace TechJobs6Persistent.Controllers
 
         public IActionResult Add()
         {
-            return View();
+            // needs to contain list of emp obj pulled from emp db context
+            // + create instance of AJviewModel which is passed the list of emp obj.
+            List<Employer> employers = context.Employers.ToList();
+
+            AddJobViewModel addJobViewModel = new AddJobViewModel(employers);
+            return View(addJobViewModel);
         }
 
         [HttpPost]

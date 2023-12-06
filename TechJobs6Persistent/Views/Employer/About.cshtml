@@ -1,6 +1,11 @@
-﻿<h1>Employer: Name</h1>
+﻿@using TechJobs6Persistent.Models
+@model Employer
+@*use model to populate the view*@
+
+
+<h1>Employer:@Model.Name</h1>
 
 <div>
-    <p>Name: name</p>
-    <p>Location: location</p>
+    <p>Name: @Model.name</p>
+    <p>Location: @Model.location</p>
 </div>
