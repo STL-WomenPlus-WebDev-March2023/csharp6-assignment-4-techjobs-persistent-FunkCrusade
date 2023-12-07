@@ -30,7 +30,7 @@ namespace TechJobs6Persistent.Migrations
 
                     b.HasIndex("SkillsId");
 
-                    b.ToTable("JobSkill");
+                    b.ToTable("JobSkills", (string)null);
                 });
 
             modelBuilder.Entity("TechJobs6Persistent.Models.Employer", b =>
