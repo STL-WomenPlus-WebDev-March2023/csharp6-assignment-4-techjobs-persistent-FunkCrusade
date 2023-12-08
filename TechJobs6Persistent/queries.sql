@@ -15,17 +15,12 @@
 
 -- SELECT Name 
 -- FROM Employers
--- where Location like	'St. Louis';
-
--- EmployerId : INT
---Id : INT
---Name : LONGTEXT
+-- WHERE Location like	'St. Louis';
 
 --Part 3: Write a query to return a list of the names and descriptions of all skills that are attached to jobs in alphabetical order.
     --If a skill does not have a job listed, it should not be included in the results of this query.
 
--- SELECT skills.skillname, jobs.name
--- FROM skills
--- LEFT JOIN jobskills ON skills.id = jobskills.skillsid INNER JOIN jobs on jobskills.jobsid = jobs.id 
--- WHERE jobskills.jobsid is not null
--- ORDER BY skillname;
+-- SELECT skillname 
+-- FROM Skills 
+-- Inner Join JobSkills On Skills.Id = JobSkills.SkillsId
+-- Order By Skillname ASC
